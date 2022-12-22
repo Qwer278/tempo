@@ -1,0 +1,87 @@
+Screen:
+    MDCard:
+        size_hint: None, None
+        size: 300, 400
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 25
+        spacing: 25
+        orientation: 'vertical'
+
+        MDTextField:
+            mode: "rectangle"
+            id: first_name
+            hint_text: "First Name"
+            icon_right: "account"
+            pos_hint: {"center_x": .5,"center_y": .5}
+            height: self.minimum_height
+            multiline: False
+            cursor_color:96/255,74/255,215/255,1
+            cursor_width: "2sp"
+            foreground_color:96/255,74/255,215/255,1
+            background_color:0,0,0,0
+            padding:15
+            max_text_length: 10
+            size_hint_x: None
+            width: 200
+            font_size: 18
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            mode: "rectangle"
+            id: last_name
+            hint_text: "Last Name"
+            icon_right: "form-textbox-password"
+            max_text_length: 6
+            size_hint_x: None
+            width: 200
+            font_size: 18
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            mode: "rectangle"
+            id: city
+            hint_text: "city"
+            icon_right: "form-textbox-password"
+            max_text_length: 6
+            size_hint_x: None
+            width: 200
+            font_size: 18
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            mode: "rectangle"
+            id: Address
+            hint_text: "address"
+            icon_right: "form-textbox-password"
+            max_text_length: 6
+            size_hint_x: None
+            width: 200
+            font_size: 18
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            mode: "rectangle"
+            id: pincode
+            hint_text: "Pincode"
+            icon_right: "form-textbox-password"
+            max_text_length: 6
+            size_hint_x: None
+            width: 200
+            font_size: 18
+            pos_hint: {"center_x": 0.5}
+
+
+        MDRoundFlatButton:
+            text: "Proceed"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press: app.logger()
+
+        Widget:
+            size_hint_y: None
+            height: 10
+
+
+
+

@@ -1,0 +1,117 @@
+ScreenManager:
+    Screen:
+        name:"login"
+        MDBoxLayout:
+            padding:"1dp"
+            adaptive_height: True
+            orientation:"vertical"
+            pos_hint: {"center_x": 0.56, "center_y": 0.6}
+            # size_hint_y: None
+            # row_default_height:40
+            spacing: 24
+            # cols:1
+            MDLabel:
+                orientation:"horizontal"
+                text:"Login or Create a New Account"
+                font_size: self.width/16
+            MDLabel:
+                text:"    Let's Have a Deal Today."
+                font_size: self.width/20
+            MDTextField:
+                id: textbox
+                hint_text: "Mobile Number"
+                helper_text: "Number mut be 10 digit."
+                helper_text_mode: "on_focus"
+                icon_left: "phone"
+                input_filter: 'int'
+                max_value : 10
+                size_hint: None, None
+                width: root.width*0.8
+            MDBoxLayout:
+                orientation:"horizontal"
+                spacing: 4
+                MDCheckbox:
+                    group: 'group'
+
+                    size_hint: None,None
+                    size: "24dp", "24dp"
+
+                    # giving location
+                    pos_hint: {'center_y': 0.2}
+                MDLabel:
+                    text:"By checking, you are agreeing our tNc!"
+                    font_size: self.width/18
+            MDFillRoundFlatIconButton:
+                icon:"login"
+                text: "Proceed with Login"
+                pos_hint: {"center_x": 0.4}
+                on_press: app.call_otp_page()
+
+    Screen:
+        name:"loginotp"
+        MDBoxLayout:
+            padding:"1dp"
+            adaptive_height: True
+            orientation:"vertical"
+            pos_hint: {"center_x": 0.56, "center_y": 0.6}
+            # size_hint_y: None
+            # row_default_height:40
+            spacing: 24
+            # cols:1
+            MDLabel:
+                orientation:"horizontal"
+                text:"Login or Create a New Account"
+                font_size: self.width/16
+            MDLabel:
+                text:"    Let's Have a Deal Today."
+                font_size: self.width/20
+            MDTextField:
+                hint_text: "OTP"
+                helper_text: "OTP mut be 6 digit."
+                helper_text_mode: "on_focus"
+                icon_left: "key"
+                input_filter: 'int'
+                max_value : 6
+                size_hint: None, None
+                width: root.width*0.8
+
+            MDFillRoundFlatIconButton:
+                icon:"login"
+                text: "Proceed with OTP"
+                pos_hint: {"center_x": 0.4}
+                on_press: app.verify_otp()
+
+	Screen:
+		name:"front_page"
+		MDBoxLayout:
+			orientation:"vertical"
+			MDTopAppBar:
+			    title:"Deal.com"
+			    right_action_items:[["help-circle-outline"]]
+			    elevation:1
+
+			MDBottomAppBar:
+
+			    MDTopAppBar:
+			        title:""
+			        md_bg_bottom_color: 1, 1, 1, 1
+			        icon:"plus"
+	                icon_color: self.md_bg_bottom_color
+			        type:"bottom"
+			        use_overflow: True
+			        elevation:13
+			        left_action_items:
+				        [
+				        ["home", lambda x: app.callback(x), "Home"],
+				        ["store", lambda x: app.callback(x), "Message reply", "Message reply"],
+				        ]
+					right_action_items:
+				        [
+				        ["view-list", lambda x: app.callback(x),"Orders", "Orders"],
+				        ["account-circle", lambda x: app.callback(x), "Message star", "Message star"],
+				        ]
+				    specific_text_color: 0,0,0,0.7
+
+			MDLabel:
+			    text:"That bopody"
+			    halign:"center"
