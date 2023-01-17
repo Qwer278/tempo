@@ -1,0 +1,34 @@
+Screen:
+	name:"front_page"
+	MDBoxLayout:
+		orientation:"vertical"
+		MDTopAppBar:
+		    title:"Deal.com"
+		    right_action_items:[["help-circle-outline"]]
+		    elevation:1
+
+		MDBottomAppBar:
+
+		    MDTopAppBar:
+		        title:""
+		        md_bg_bottom_color: 1, 1, 1, 1
+		        icon:"plus"
+                icon_color: self.md_bg_bottom_color
+		        type:"bottom"
+		        use_overflow: True
+		        elevation:13
+		        left_action_items:
+			        [
+			        ["home", lambda x: app.callback(x), "Home"],
+			        ["store", lambda x: app.callback(x), "Message reply", "Message reply"],
+			        ]
+				right_action_items:
+			        [
+			        ["view-list", lambda x: app.callback(x),"Orders", "Orders"],
+			        ["account-circle", lambda x: app.callback(x), "Message star", "Message star"],
+			        ]
+			    specific_text_color: 0,0,0,0.7
+
+		MDLabel:
+		    text:"That bopody"
+		    halign:"center"

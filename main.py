@@ -16,23 +16,22 @@ Login='''
 
 class KivyApp(MDApp):
     def build(self):
-        # self.theme_cls.theme_style = "Dark"
-        # self.theme_cls.primary_palette = "BlueGray"
-        return Builder.load_file("login.kv")
+        return Builder.load_file("front.kv")
 
     def call_otp_page(self):
         print('hey')
         text = self.root.ids.textbox.text
-        if len(text) == 0:
+        if len(text) != 0:
             print('The text box should not be empty')
-        elif len(text)==10:
+        # elif len(text)==10:
+        else:
             self.root.current = 'loginotp'
 
     def verify_otp(self):
+
         self.root.current = 'front_page'
 
     # def logger(self):
-    #     self.root.ids.welcome_label.text = "OTP Sent"
 
     def on_start(self):
         print("this method on start is fire!!!!")
